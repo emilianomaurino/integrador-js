@@ -3,6 +3,9 @@
     justify-content: space-between;
     padding: 0px 50px;
   }
+  .category_btn_container{
+    width: 75%;
+  }
 }
 
 
@@ -37,6 +40,10 @@
         transform: translate(0%);
         transition: all 0.5s csliubic-bezier(0.92, 0.01, 0.35, 0.99);
     }
+
+    .category_btn_container{
+      width: 100%;
+    }
     #Contact{
       flex-direction: column;
       align-items: center;
@@ -55,6 +62,17 @@
     .info-contact{
       align-self: center;
     }
+
+    .contact-formContainer p{
+      padding-bottom: 50px;
+    }
+
 }
 
-@media (max-width: 576px){}
+@media (max-width: 576px){
+
+ 
+
+
+  
+}
