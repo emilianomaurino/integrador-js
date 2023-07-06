@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./assets/mediaqueries.css">
+    <title>Boca Noticias</title>
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <header>
+        <img src="./assets/img/bocalogo.png" alt="logo mundo boca" class="logo_boca">
+        <nav class="navbar">
+            <div class="menu-label">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="navbar_list">
+                <li><a href="#Hero" class="navbar-link">Inicio</a></li>
+                <li>
+                    <a href="#About-us" class="navbar-link">Nosotros</a>
+                </li>
+                <li>
+                    <a href="#News" class="navbar-link">Noticias</a>
+                </li>
+                <li>
+                    <a href="#Contact" class="navbar-link">Contactanos</a>
+                </li>
+            </ul>
+            
+            <div class="login_register">
+                <i class="fa-solid fa-user"></i>
+                <ul class="login-list">
+                    <li>
+                        <a href="./assets/pages/login.html" class="login">Inicia Sesión</a>
+                    </li>
+                    <li>
+                        <p>¿Todavía no tenés una cuenta? <span><a href="./assets/pages/register.html" class="login">Registrate</a>
+                        </span></p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="favs-label">
+                <i class="fa-solid fa-heart"></i>                
+            </div>
+            <div class="favs-container">
+                <h2>Tus Noticias favoritas</h2>
+
+                <div class="favNews-container">
+                </div> 
+                    
+                <button class="fav-btn-delete">Borrar todas</button>
+                
+
+            </div>
+
+        
+        </nav>
+    </header>
+    <div class="add-modal">hola</div>    
+    <main>
+        <section id="Hero">
+            <div class="hero-container">
+                <div class="hero_text">
+                    <h1>La Web de noticias del club más grande</h1>
+                </div>
+        </div>
+        </section>
+        <section id="About-us">
+            <div class="about_container">
+                <div class="about-big">
+                    <div class="about-card">
+                        <img src="./assets/img/superclasico_862x485.jpg" alt="partidos">
+                        <h4>Streaming en vivo de los partidos de boca</h4>
+                    </div>
+                    <div class="about-card">
+                        <img src="./assets/img/BCZCKM2OJ5FVXPAVL4AAFWFJHE.jpg" alt="roman">
+                        <h4>Noticias al instante las 24 hs. del día</h4>
+                    </div>
+                    <div class="about-card">
+                        <img src="./assets/img/riquelme_w862.jpg" alt="roman">
+                        <h4>Programas y entrevistas exclusivas con nuestros máximos ídolos</h4>
+                    </div>    
+                </div>
+
+                    <!-- <div class="about_card">
+                        <img src="./assets/img/partidosBoca.png" alt="imagen de partido"> 
+                        <h4>Streaming en vivo de los partidos de boca</h4>
+                    </div>
+                    <div class="about_card">
+                        <img src="./assets/img/BCZCKM2OJ5FVXPAVL4AAFWFJHE.jpg" alt="imagen de partido"> 
+                        <h4>Noticias al instante las 24 hs. del día</h4>
+                    </div>
+                    <div class="about_card">
+                        <img src="./assets/img/Riquelme_despedida.webp" alt="imagen de partido"> 
+                        <h4>Programas y entrevistas exclusivas con nuestros máximos ídolos</h4>
+                    </div> 
+                </div>   -->
+                <div class="about-btnContainer">
+                    <button class="about-btn streamig"></button>
+                    <button class="about-btn news"></button>
+                    <button class="about-btn programs"></button>
+                </div>
+                
+            </div>
+        
+
+        </section>
+        <section id="News">
+            <div class="category_btn_container">
+                <button class="btnNews_category">Todas</button>
+                <button class="btnNews_category" data-category="futbolM">Futbol Masc.</button>
+                <button class="btnNews_category" data-category="futbolF">Futbol Fem.</button>
+                <button class="btnNews_category" data-category="basquetM">Basquet</button>
+            </div>
+            <div class="news_conteiner">
+                <!-- <div class="news_card">
+                    <img src="./assets/img/bocaZeballos.webp" alt="zeballos">
+                    <h3>En la recta final</h3>
+                    <a href="#"><p>El changuito se pone a punto y volvería a jugar el próximo domingo frente a Lanus</p></a>
+                    <button class="fav-newsBtn" data-id="" data-title="" data-info="" data-name="" data-img="">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </div>
+                <div class="news_card"><p>HOLA</p></div>
+                <div class="news_card"><p>HOLA</p></div> -->
+
+            </div> 
+            
+            <button class="btn_news more">Mostrar más</button>
+            <button class="btn_news less hidden">Mostrar menos</button>
+
+
+        </section>
+        
+       <section id="Contact">
+            <div class="contact-information">   
+                <h2>CONTACTO</h2>
+                <div class="information-conteiner">
+                    <div class="info-contact">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p>Brandsen N° 805  - C.A.B.A. - Argentina</p>
+                    </div>
+                    <div class="info-contact">
+                        <i class="fa-solid fa-phone"></i>
+                        <p>291-1111111</p>
+                    </div>
+                    <div class="info-contact">
+                        <i class="fa-solid fa-envelope"></i>
+                        <p>contactobocanews@gmail.com</p>
+                    </div>
+                    <div class="socialList">
+                        <h2>SEGUINOS EN NUESTRAS REDES</h2>
+                        <ul class="socialIcons">
+                            
+                            <li>
+                                <a href="https://discord.com/">
+                                    <i class="fa-brands fa-discord"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://api.whatsapp.com/send/?phone=542901617848">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <div class="contact-form">
+                <h2>ESCRIBINOS</h2>  
+                <div class="contact-formContainer">
+                <form action="" class="form">
+                    <label for="nombre-apellido"> </label>
+                    <input type="text" id="nombre-apellido" placeholder="Ingresa tu nombre y apellido" required class="form">
+                    <label for="telefono"></label>
+                    <input type="number" id="telefono" placeholder="Ingresa tu teléfono" required class="form">
+                    <label for="email"></label>
+                    <input type="email" id="email" placeholder="Ingresa tu e-mail" required class="form">
+                    <label for="text-area"></label>
+                    <textarea name="" id="text-area" cols="30" rows="10" placeholder="Dejanos tu mensaje y te asesoraremos a la brevedad" required class="form"></textarea>
+                    <button type="submit" class="buttonContact">Enviar</button>
+                </form>
+            </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+            <h2>Podrán Imitarnos pero Igualarnos Jamás</h2>
+            <h4>@Desarrollado por Emiliano Maurino</h4>
+    </footer>
+    <script src="./assets/data.js"></script>
+    <script src="./assets/index.js"></script>
+</body>
+</html>
