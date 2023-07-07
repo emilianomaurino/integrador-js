@@ -308,7 +308,7 @@ html{
         width: 300%;
         display: flex;
         gap: 25px;
-        transform: translateX(33%);
+        transform: translateX(34%);
         overflow-x: hidden;
         transition: all 0.5s ease;  
         
@@ -355,7 +355,7 @@ html{
         transform: translate(0%);
     }
     .correr2{
-        transform: translate(-33%);
+        transform: translate(-34%);
     }
 
     /* NEWS */
