@@ -44,6 +44,7 @@ html{
             top: 0;
             background: var(--blue);
             z-index: 999999;
+            transition: all 0.5s ease
         }
 
         .logo_boca{
@@ -60,6 +61,7 @@ html{
         .navbar_list {
             display: flex;
             gap: 30px;
+            transition: all 0.5s linear,
         }
 
         .navbar{
@@ -92,8 +94,12 @@ html{
             font-size: 120%;
             color: var(--grey);
             cursor: pointer;
-                    
-            /* padding-left: 70px; */
+            }
+
+        .fa-user:hover{
+            scale: 1.1;
+            transition: all 0.1s linear;
+            cursor:pointer
         }
         .login-list{
             display: none;
@@ -109,6 +115,7 @@ html{
             padding: 30px;
             transform: translate(200%);
             border-radius: 5px;
+            
         }
 
         .login-list a{
@@ -129,6 +136,13 @@ html{
             color: var(--white);
             border-width: thin;
             padding: 5px;
+        }
+
+        .login:hover{
+            scale: 1.1;
+        transition: all 0.1s linear;
+        cursor:pointer
+        
         }
         
 
@@ -160,7 +174,7 @@ html{
             padding: 20px 30px;
             min-width: 375px;
             transform: translate(200%);
-            /* transition: all 0.5s cubic-bezier(0.92, 0.01, 0.35, 0.99); */
+            transition: all 0.2s ease;
             overflow-y: scroll;
             font-family: var(--montserrat);
             font-size: 80%;
@@ -224,10 +238,13 @@ html{
             background-color: var(--white);
             font-family: var(--montserrat);
             font-weight: 500;
+            cursor: pointer;
         }
         .fav-btn-delete{
             background-color: var(--white)
         }
+
+    
 
 
     /* HERO */
@@ -393,6 +410,7 @@ html{
         text-align: center;
         border-radius: 5px;
         gap: 15px;
+        box-shadow: 5px 5px 5px rgb(199, 199, 199);
     }
 
     .news_card img{
@@ -437,8 +455,16 @@ html{
         align-self: center;
         width: 25%;
         height: 40px;
+        cursor: pointer;
     }
-
+    .more:hover,
+    .less:hover{
+        transition: all 0.1s linear;
+        border: groove;
+        border-width: thin;
+        box-shadow: 10px 5px 5px rgb(114, 113, 113);
+        background-color: var(--gold);
+    }
 
 
 
@@ -511,6 +537,7 @@ html{
   }
 
 
+
   .contact-form{
     width: 50%;
     display: flex;
@@ -547,11 +574,13 @@ html{
   }
 
   .form button:hover,
-  .btnNews_category:hover{
+  .btnNews_category:hover,
+  .item-btn:hover,
+  .fav-btn-delete:hover{
     transition: all 0.1s linear;
     border: groove;
     border-width: thin;
-    box-shadow: 10px 5px 5px black;
+    box-shadow: 10px 5px 5px rgb(114, 113, 113);
     background-color: var(--gold);
   }
 
@@ -595,9 +624,9 @@ html{
     footer h2{
         background: rgb(255,255,255);
         background: linear-gradient(to left, #fafafa, #f3b229);
-            background-clip: text;
-            color: transparent;
-            -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-background-clip: text;
         font-weight: 700;
         font-family: var(--montserrat);
     }

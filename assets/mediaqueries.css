@@ -43,6 +43,7 @@
 
     .category_btn_container{
       width: 100%;
+      gap: 10px;
     }
     #Contact{
       flex-direction: column;
@@ -70,8 +71,15 @@
 }
 
 @media (max-width: 576px){
+  
+  .info-contact p{
+    padding: 0;
+  }
+  footer h2{
+    text-align: center;
+  }
 
- 
+
 
 
   
