@@ -71,9 +71,15 @@
 }
 
 @media (max-width: 576px){
-  
+  .info-contact{
+    margin-left: 30px;
+   }
   .info-contact p{
     padding: 0;
+  }
+
+  .btn_news{
+    width: 50%;
   }
   footer h2{
     text-align: center;
