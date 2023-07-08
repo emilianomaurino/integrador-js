@@ -67,7 +67,7 @@
                 <div class="hero_text">
                     <h1>La Web de noticias del club más grande</h1>
                 </div>
-        </div>
+            </div>
         </section>
         <section id="About-us">
             <div class="about-container">
@@ -95,6 +95,7 @@
         
 
         </section>
+        
         <section id="News">
             <div class="category_btn_container">
                 <button class="btnNews_category">Todas</button>
@@ -166,18 +167,26 @@
             <div class="contact-form">
                 <h2>ESCRIBINOS</h2>  
                 <div class="contact-formContainer">
-                <form action="" class="form">
-                    <label for="nombre-apellido"> </label>
-                    <input type="text" id="nombre-apellido" placeholder="Ingresa tu nombre y apellido" required class="form">
-                    <label for="telefono"></label>
-                    <input type="number" id="telefono" placeholder="Ingresa tu teléfono" required class="form">
-                    <label for="email"></label>
-                    <input type="email" id="email" placeholder="Ingresa tu e-mail" required class="form">
-                    <label for="text-area"></label>
-                    <textarea name="" id="text-area" cols="30" rows="10" placeholder="Dejanos tu mensaje y te asesoraremos a la brevedad" required class="form"></textarea>
-                    <button type="submit" class="buttonContact">Enviar</button>
-                </form>
-            </div>
+                    <form action="" class="form">
+                        <div class="form__field">
+                            <label for="Contact-nameLastName"> </label>
+                            <input type="text" id="Contact-nameLastName" placeholder="Ingresa tu nombre y apellido" required class="form">
+                            <small></small>
+                        </div>
+
+                        <div class="form__field">
+                        <label for="contact-email"></label>
+                        <input type="email" id="contact-email" placeholder="Ingresa tu e-mail" required class="form">
+                        <small></small>
+                        </div>
+                        <div class="form__field">
+                        <label for="contact-text-area"></label>
+                        <textarea name="" id="contact-text-area" cols="30" rows="10" placeholder="Dejanos tu mensaje y te responderemos a la brevedad" required class="form"></textarea>
+                        <small></small>
+                        </div>
+                        <button type="submit" class="buttonContact">Enviar</button>
+                    </form>
+                </div>
             </div>
         </section>
     </main>

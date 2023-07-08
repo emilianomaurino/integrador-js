@@ -3,6 +3,12 @@ const nameLastNameInput = document.getElementById("nombre-apellido");
 const dniInput = document.getElementById("dni");
 const emailInput = document.getElementById("email");
 const passInput = document.getElementById("password");
+const contactFormBtn = document.querySelector(".buttonContact");
+const contactForm = document.querySelector(".contact-formContainer");
+const contactNameLastNameInput = document.getElementById("Contact-nameLastName");
+const contactPhoneInput = document.getElementById("contact-phone");
+const contactEmailInput = document.getElementById("contact-email");
+const contactTextAreaInput = document.getElementById("contact-text-area");
 
 const users = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -117,12 +123,12 @@ const checkTextInput = (input) => {
     const checkPassword = (input) => {
         let valid = false 
         if(isEmpty(input)) {
-            showError(input, "La contraseñan es obligatoria");
+            showError(input, "La contraseña es obligatoria");
             return 
         }
         if(!isPassSecure(input)) {
             showError(input, 
-            "La contra debe contener por lo menos 8 caracter, una mayuscula, minuscula, numero y simbolo");
+            "La contra debe contener por lo menos 8 caracteres, una mayuscula, minuscula, numero y simbolo");
             return 
         }
         showSucces(input);
@@ -163,12 +169,13 @@ const submitHandler = (e) => {
 
 
 
+
 const init = () => {
     registerForm.addEventListener("submit", submitHandler);
     nameLastNameInput.addEventListener("input", () => checkTextInput(nameLastNameInput));
     dniInput.addEventListener("input", () => checkDniInput(dniInput));
     emailInput.addEventListener("input", () => checkEmailInput(emailInput));
-    passInput.addEventListener("input", () => checkPassword(passInput))
+    passInput.addEventListener("input", () => checkPassword(passInput));
 };
 
 

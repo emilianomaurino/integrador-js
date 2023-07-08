@@ -2,6 +2,7 @@ const menuBtn = document.querySelector(".menu-label");
 const menu = document.querySelector(".navbar_list");
 const favsBtn = document.querySelector(".favs-label");
 const favs =  document.querySelector(".favs-container");
+const overlay = document.querySelector(".overlay");
 const loginRegisterBtn = document.querySelector(".login_register");
 const loginRegister = document.querySelector('.login-list');
 const newsContainer = document.querySelector(".news_conteiner");
@@ -20,6 +21,9 @@ const aboutCardBigContainer = document.querySelector(".about-big");
 const aboutBtn= document.querySelectorAll(".about-btn");
 const contactFormBtn = document.querySelector(".buttonContact");
 const contactForm = document.querySelector(".contact-formContainer");
+const contactNameLastNameInput = document.getElementById("Contact-nameLastName");
+const contactEmailInput = document.getElementById("contact-email");
+const contactTextAreaInput = document.getElementById("contact-text-area");
 
 
 
@@ -34,6 +38,7 @@ const saveFavs = () => {
 
 
         // SHOW MENU && FAVS 
+
 const toggleMenu = () =>{
     menu.classList.toggle("open");
     if(favs.classList.contains("open")   || loginRegister.classList.contains('open')){
@@ -41,7 +46,7 @@ const toggleMenu = () =>{
         loginRegister.classList.remove("open");
         return
     }
-    // overlay.classList.toggle("show-overlay");
+     overlay.classList.toggle("show-overlay");
 }
 
 const toggleFavs = () =>{
@@ -51,7 +56,7 @@ const toggleFavs = () =>{
         loginRegister.classList.remove('open');
         return
     }
-   // overlay.classList.toggle("show-overlay"); 
+     overlay.classList.toggle("show-overlay"); 
 }
 
 
@@ -62,6 +67,7 @@ const toggleLoginRegister = () =>{
         favs.classList.remove('open');
         return
     }
+    overlay.classList.toggle("show-overlay")
 }
 
 const closeOnScroll = () =>{
@@ -72,7 +78,7 @@ const closeOnScroll = () =>{
     menu.classList.remove("open");
     favs.classList.remove("open");
     loginRegister.classList.remove('open')
-    // overlay.classList.remove("open");
+    overlay.classList.remove("show-overlay");
 }
 
 const closeOnClick = (e) =>{
@@ -82,22 +88,13 @@ const closeOnClick = (e) =>{
     menu.classList.remove('open');
 }
 
-//  const closeOnOverlayClick = () => {
-//  	barsMenu.classList.remove("open-menu");
-//  	cartMenu.classList.remove("open-cart");
-//  	overlay.classList.remove("show-overlay"); 
-// };
+  
 
 
 
 
 
-
-
-
-
-
-        // TEMPLATE Y RENDER NEWS
+    // TEMPLATE Y RENDER NEWS
 
 const templateNews = (news) => {
     const {id, name, cardImg, title, info} = news
@@ -336,8 +333,8 @@ const activeAboutBtn = (e) => {
 }
 
 const resetAbout = () =>{
-    aboutCardBigContainer.classList.remove("correr1");
-    aboutCardBigContainer.classList.remove("correr2");
+    aboutCardBigContainer.classList.remove("slide1");
+    aboutCardBigContainer.classList.remove("slide2");
 }
 
 
@@ -351,7 +348,7 @@ const aboutCarrousel = (e) => {
         } else {
             if(e.target.classList.contains("news")){
             resetAbout();
-            aboutCardBigContainer.classList.add("correr1");
+            aboutCardBigContainer.classList.add("slide1");
             
             activeAboutBtn(e)
 
@@ -359,17 +356,139 @@ const aboutCarrousel = (e) => {
             }
             else if(e.target.classList.contains("programs")) {
            resetAbout();
-           aboutCardBigContainer.classList.add("correr2");
+           aboutCardBigContainer.classList.add("slide2");
            activeAboutBtn(e);
            return
         }
     }
 }
 
-const contactSubmitHandler = (e) =>{
-    e.preventDefault()
-    contactForm.innerHTML = "<p>Gracias por contactarnos! Te responderemos a la brevedad</p>"
+
+
+// CONTACT FORM
+const isEmpty = (input) => {
+    return !input.value.trim().length;
+};
+
+
+const showError = (input, message) => {
+ 	const formField = input.parentElement;
+ 	formField.classList.remove("success");
+ 	formField.classList.add("error");
+ 	const error = formField.querySelector("small");
+ 	error.style.display = "block";
+ 	error.textContent = message;
+ };
+
+const isBetween = (input, minimo, maximo) => {
+    return input.value.length >= minimo && input.value.length <= maximo;
+};
+
+const showSucces = (input) => {
+    const formField = input.parentElement;
+    formField.classList.remove("error");
+    formField.classList.add("success");
+    const error = formField.querySelector("small");
+    error.style.display = "none";
+    error.textContent = "";
 }
+
+const isDniValid = (input) => {
+    const re = /^[0-9]{1,3}\.?[\d]{3,3}\.?[\d]{3,3}$/;
+    return re.test(input.value.trim());
+};
+
+const isValidEmail = (input) => {
+    const re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+    return re.test(input.value.trim());
+};
+
+const isExistingEmail = (input) => {
+	return users.some((user) => user.email === input.value.trim());
+};
+
+const isPassSecure = (input) => {
+    const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
+    return re.test(input.value.trim());
+};
+
+
+
+
+// FUNCIONES DE VALIDACION DE INPUTS----------------------------
+
+const checkTextInput = (input) => {
+    let valid = false; 
+    const minCharacters = 3;
+    const maxCharacters = 20;
+    if (isEmpty(input)){
+        showError(input, "Este campo es obligatorio");
+        return;
+    }
+    if (!isBetween(input, minCharacters, maxCharacters)) {
+        showError(input, `Este campo debe contener entre ${minCharacters} y ${maxCharacters} caracteres`)
+        return;
+    }
+    showSucces(input);
+    valid = true;
+    return valid;
+};
+
+
+const checkTextArea = (input) => {
+    let valid = false; 
+    const minCharacters = 30;
+    const maxCharacters = 2000;
+    if (isEmpty(input)){
+        showError(input, "Este campo es obligatorio");
+        return;
+    }
+    if (!isBetween(input, minCharacters, maxCharacters)) {
+        showError(input, `Este campo debe contener entre ${minCharacters} y ${maxCharacters} caracteres`)
+        return;
+    }
+    showSucces(input);
+    valid = true;
+    return valid;
+};
+ 
+
+    const checkEmailInput = (input) => {
+        let valid = false 
+        if(isEmpty(input)) {
+             showError(input, "El mail es obligatorio");
+            return
+        };
+        if(!isValidEmail(input)) {
+            showError(input, "No es un mail valido")
+            return 
+        }
+        
+        showSucces(input);
+        valid = true;
+        return valid;
+    }
+
+    
+        
+
+
+
+ const contactSubmitHandler = (e) =>{
+     e.preventDefault()
+
+     let isNameValid = checkTextInput(contactNameLastNameInput);
+     let isMailValid = checkEmailInput(contactEmailInput);
+     let isTextAreaValid = checkTextArea(contactTextAreaInput);
+
+     let isValidForm = 
+     isNameValid && 
+     isMailValid &&
+     isTextAreaValid;
+
+     if(isValidForm) {
+     contactForm.innerHTML = "<p>Gracias por contactarnos! Te responderemos a la brevedad</p>"
+ }}
 
 console.log(favorites)
 console.log(aboutData)
@@ -382,7 +501,6 @@ const init = () =>{
     menu.addEventListener("click", closeOnClick); 
     loginRegisterBtn.addEventListener("click", toggleLoginRegister);
     window.addEventListener("scroll", closeOnScroll);
-    // overlay.addEventListener("click", closeOnOverlayClick);
     renderNews(appState.news[appState.currentNewsIndex]);
     showMoreBtn.addEventListener("click", showMoreNews);
     showLessBtn.addEventListener("click", showLessNews);
@@ -393,8 +511,10 @@ const init = () =>{
     deleteAllFavsBtn.addEventListener("click", resetFavItem);
     aboutContainer.addEventListener("click", aboutCarrousel);
     contactFormBtn.addEventListener("click", contactSubmitHandler)
+    contactNameLastNameInput.addEventListener("input", () => checkTextInput(contactNameLastNameInput));
+    contactEmailInput.addEventListener("input", () => checkEmailInput(contactEmailInput));
+    contactTextAreaInput.addEventListener("input", () => checkTextArea(contactTextAreaInput));
     
-
 };
 
 init();
