@@ -94,7 +94,7 @@
   }
   
   .info-contact{
-    margin-left: 30px;
+    margin-left: 50px;
   }
   
   .info-contact p{
@@ -106,7 +106,7 @@
   }
   
   footer h2{
-    text-align: center;
+    text-align:center;
   }
 
   .button-register{
@@ -115,7 +115,3 @@
   
 }
 
-/* 
-
-CONTROLAR NOMBRES DE CLASES
-TERMINAR EL REGISTRARSE

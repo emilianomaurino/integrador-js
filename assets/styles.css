@@ -148,12 +148,12 @@ html{
             font-size: 90%;
         }
         
-        .login-list li:first-child{
+        /* .login-list li:first-child{
             border: solid;
             color: var(--white);
             border-width: thin;
             padding: 5px;
-        }
+        } */
 
         .login:hover{
         scale: 1.1;
@@ -491,6 +491,8 @@ html{
             display: flex;
             flex-direction: row;
             padding-top: 0px;
+            justify-content: center;
+            align-items: center;
         }
 
         #Contact h2{
@@ -508,6 +510,7 @@ html{
             display: flex;
             flex-direction: column;
             align-content: center;
+            max-width: 600px;
         
         }
 
@@ -524,7 +527,6 @@ html{
             gap: 10px;
             padding: 10px;
             font-family: var(--font-hanken);
-            margin-left: 80px;
             align-self: center;
         }
 
@@ -557,7 +559,7 @@ html{
             width: 50%;
             display: flex;
             flex-direction: column;
-
+            max-width: 600px;
         }
 
         .contact-form form{

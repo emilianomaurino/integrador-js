@@ -20,11 +20,17 @@
             <h2 class="heroText loginTxt"><span>INICIA SESIÓN</span>y accedé a tus noticias favoritas</h2>  
             <div class="form-conteiner">
             <div class="register-login-form">
-                <form action="" class="form">
-                    <label for="email"></label>
-                    <input type="email" id="email" placeholder="Ingresa tu e-mail" required class="form">
-                    <label for="password"></label>
-                    <input type="password" id="password" placeholder="Ingresa tu contraseña" required class="form">
+                <form action="" class="form" id="login-form" novalidate>
+                    <div class="form__field">
+                        <label for="login-email"></label>
+                        <input type="email" id="login-email" placeholder="Ingresa tu e-mail" required class="form">
+                    </div>
+                    <div class="form__field">
+                        <label for="login-password"></label>
+                        <input type="password" id="login-password" placeholder="Ingresa tu contraseña" required class="form">
+            
+                    </div>
+                    <small id="form-error"></small>
                     <button type="submit" class="button-login">Inicia Sesion</button>
                 </form>
             </div>
@@ -32,8 +38,9 @@
         </section>    
     </main>
     <footer>
-
+        <h2>Podrán Imitarnos pero Igualarnos Jamás</h2>
+        <h4>@Desarrollado por Emiliano Maurino</h4>
     </footer>
-    <script src="/assets/login-register.js"></script>
+    <script src="/assets/login.js"></script>
 </body>
 </html>
