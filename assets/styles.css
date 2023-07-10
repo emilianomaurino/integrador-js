@@ -155,7 +155,7 @@ html{
             padding: 5px;
         }
 
-        .login:hover{
+        .login-list a:hover{
         scale: 1.1;
         transition: all 0.1s linear;
         cursor:pointer
