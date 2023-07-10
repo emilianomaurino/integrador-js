@@ -492,6 +492,7 @@ html{
             flex-direction: row;
             padding-top: 0px;
             aling-items: center;
+            justify-content: center;
         }
 
         #Contact h2{
