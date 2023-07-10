@@ -174,6 +174,7 @@ const setShowMoreVisibility = () => {
         return
     }
     showMoreBtn.classList.add("hidden");
+    showLessBtn.classList.add("hidden");
 }
 
 const renderFilteredNews = () => {
