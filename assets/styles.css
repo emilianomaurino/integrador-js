@@ -58,7 +58,7 @@ html{
             align-items:center; 
             top: 0;
             background: var(--blue);
-            z-index: 999999;
+            z-index: 9999999999999999;
             transition: all 0.5s ease
         }
 
@@ -155,7 +155,7 @@ html{
             padding: 5px;
         } */
 
-        .login:hover{
+        .login-list a:hover{
         scale: 1.1;
         transition: all 0.1s linear;
         cursor:pointer
@@ -781,6 +781,7 @@ html{
       
 .active{
     background-color: #f3b229;
+    
 }
 
 .open{
