@@ -491,6 +491,7 @@ html{
             display: flex;
             flex-direction: row;
             padding-top: 0px;
+            aling-items: center;
         }
 
         #Contact h2{
